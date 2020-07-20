@@ -20,21 +20,6 @@ cat >>/etc/hosts<<EOF
 192.168.1.6 kworker.k8s.com kworker
 EOF
 ```
-
-Install Docker Engine on CentOS
-
-Install using the repository
-Before you install Docker Engine for the first time on a new host machine, you need to set up the Docker repository. Afterward, you can install and update Docker from the repository.
-
-SET UP THE REPOSITORY
-Install the yum-utils package (which provides the yum-config-manager utility) and set up the stable repository.
-
-$ sudo yum install -y yum-utils
-
-$ sudo yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-
 ##### Install, enable and start docker service
 Use the Docker repository to install docker.
 > If you use docker from CentOS OS repository, the docker version might be old to work with Kubernetes v1.13.0 and above
