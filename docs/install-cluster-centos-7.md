@@ -6,7 +6,7 @@ This documentation guides you in setting up a cluster with one master node and o
 ## Assumptions
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|KMaster|kmaster.k8s.com|192.168.1.5|CentOS 7|4g|3|
+|KMaster|kmaster.k8s.com|192.168.1.5|CentOS 7|4G|3|
 |KWorker|kworker.k8s.com|192.168.1.6|CentOS 7|2G|2|
 
 ## On both Kmaster and Kworker
@@ -24,6 +24,7 @@ EOF
 Use the Docker repository to install docker.
 > If you use docker from CentOS OS repository, the docker version might be old to work with Kubernetes v1.13.0 and above
 ```
+yum update 
 yum install -y -q yum-utils device-mapper-persistent-data lvm2 > /dev/null 2>&1
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo > /dev/null 2>&1
 yum install -y -q docker-ce >/dev/null 2>&1
