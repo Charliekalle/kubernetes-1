@@ -6,8 +6,8 @@ This documentation guides you in setting up a cluster with one master node and o
 ## Assumptions
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|Master|kmaster.example.com|172.16.16.100|CentOS 7|2G|2|
-|Worker|kworker.example.com|172.16.16.101|CentOS 7|1G|1|
+|KMaster|kmaster.k8s.com|192.168.1.5|CentOS 7|4g|3|
+|KWorker|kworker.k8s.com|192.168.1.6|CentOS 7|2G|2|
 
 ## On both Kmaster and Kworker
 Perform all the commands as root user unless otherwise specified
@@ -16,8 +16,8 @@ Perform all the commands as root user unless otherwise specified
 So that we can talk to each of the nodes in the cluster
 ```
 cat >>/etc/hosts<<EOF
-172.16.16.100 kmaster.example.com kmaster
-172.16.16.101 kworker.example.com kworker
+192.168.1.5 kmaster.k8s.com kmaster
+192.168.1.6 kworker.k8s.com kworker
 EOF
 ```
 ##### Install, enable and start docker service
