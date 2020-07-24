@@ -1,13 +1,13 @@
 # Install Kubernetes Cluster using kubeadm
-Follow this documentation to set up a Kubernetes cluster on __CentOS 7__ Virtual machines.
+Follow this documentation to set up a Kubernetes cluster on __CentOS8__ Virtual machines.
 
 This documentation guides you in setting up a cluster with one master node and one worker node.
 
 ## Assumptions
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|KMaster|kmaster.k8s.com|192.168.1.5|CentOS 7|4G|3|
-|KWorker|kworker.k8s.com|192.168.1.6|CentOS 7|2G|2|
+|KMaster|kmaster.k8s.com|192.168.245.154|CentOS 8|4G|3|
+|KWorker|kworker.k8s.com|192.168.1.156|CentOS 8|2G|2|
 
 ## On both Kmaster and Kworker
 Perform all the commands as root user unless otherwise specified
@@ -16,8 +16,8 @@ Perform all the commands as root user unless otherwise specified
 So that we can talk to each of the nodes in the cluster
 ```
 cat >>/etc/hosts<<EOF
-192.168.1.5 kmaster.k8s.com kmaster
-192.168.1.6 kworker.k8s.com kworker
+192.168.245.154 kmaster.k8s.com kmaster
+192.168.245.156 kworker.k8s.com kworker
 EOF
 ```
 ##### Install, enable and start docker service
@@ -25,13 +25,16 @@ Use the Docker repository to install docker.
 > If you use docker from CentOS OS repository, the docker version might be old to work with Kubernetes v1.13.0 and above
 ```
 yum update 
-yum install -y -q yum-utils device-mapper-persistent-data lvm2 > /dev/null 2>&1
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo > /dev/null 2>&1
-yum install -y -q docker-ce >/dev/null 2>&1
+yum install -y yum-utils
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io
 
 systemctl enable docker
 systemctl start docker
 ```
+> Ref. https://docs.docker.com/engine/install/centos/
 ##### Disable SELinux
 ```
 setenforce 0
