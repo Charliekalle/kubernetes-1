@@ -24,12 +24,13 @@ EOF
 Use the Docker repository to install docker.
 > If you use docker from CentOS OS repository, the docker version might be old to work with Kubernetes v1.13.0 and above
 ```
+sudo su -
 yum update 
 yum install -y yum-utils
 yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io
+yum install docker-ce docker-ce-cli containerd.io
 
 systemctl enable docker
 systemctl start docker
