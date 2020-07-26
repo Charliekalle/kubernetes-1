@@ -1,5 +1,5 @@
 # Install Kubernetes Cluster using kubeadm
-Follow this documentation to set up a Kubernetes cluster on __CentOS8__ Virtual machines.
+Follow this documentation to set up a Kubernetes cluster on __CentOS 8__ Virtual machines.
 
 This documentation guides you in setting up a cluster with one master node and one worker node.
 
@@ -7,7 +7,7 @@ This documentation guides you in setting up a cluster with one master node and o
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
 |KMaster|kmaster.k8s.com|192.168.245.154|CentOS 8|4G|3|
-|KWorker|kworker.k8s.com|192.168.1.156|CentOS 8|2G|2|
+|KWorker|kworker.k8s.com|192.168.245.156|CentOS 8|2G|2|
 
 ## On both Kmaster and Kworker
 Perform all the commands as root user unless otherwise specified
@@ -92,7 +92,7 @@ cp /etc/kubernetes/admin.conf /home/pavan/.kube/config
 chown -R venkatn:venkatn /home/pavan/.kube
 ```
 ##### Deploy Calico network
-This has to be done as the user in the above step (in my case it is __venkatn__)
+This has to be done as the user in the above step (in my case it is __pavan__)
 ```
 kubectl create -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
 ```
