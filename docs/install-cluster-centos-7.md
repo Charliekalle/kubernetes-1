@@ -62,11 +62,16 @@ sysctl --system
 ### Kubernetes Setup
 ##### Add yum repository
 ```
-cat >>/etc/sysctl.d/kubernetes.conf<<EOF
-net.bridge.bridge-nf-call-ip6tables = 1
-net.bridge.bridge-nf-call-iptables = 1
+cat >>/etc/yum.repos.d/kubernetes.repo<<EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
+        https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
-sysctl --system
 ```
 ##### Install Kubernetes
 ```
@@ -80,7 +85,7 @@ systemctl start kubelet
 ## On kmaster
 ##### Initialize Kubernetes Cluster
 ```
-kubeadm init --apiserver-advertise-address=192.168.245.154 --pod-network-cidr=172.168.0.0/16
+kubeadm init --apiserver-advertise-address=192.168.245.154 --pod-network-cidr=172.17.0.0/16
 ```
 ##### Copy kube config
 To be able to use kubectl command to connect and interact with the cluster, the user needs kube config file.
@@ -89,7 +94,7 @@ In my case, the user account is venkatn
 ```
 mkdir /home/pavan/.kube
 cp /etc/kubernetes/admin.conf /home/pavan/.kube/config
-chown -R venkatn:venkatn /home/pavan/.kube
+chown -R pavan:pavan /home/pavan/.kube
 ```
 ##### Deploy Calico network
 This has to be done as the user in the above step (in my case it is __pavan__)
