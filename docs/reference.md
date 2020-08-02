@@ -11,3 +11,10 @@ https://www.kube-router.io/docs/user-guide/#try-kube-router-with-cluster-install
 # Kubernetes Play Envirnoments
 
 https://labs.play-with-k8s.com/p/bsgroned7q4g00cm3650#bsgroned_bsgroped7q4g00cm365g
+https://www.katacoda.com/courses/kubernetes/playground
+
+# official documentation on Creating and initializing prod or prod-like env.
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/
+
+
