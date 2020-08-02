@@ -16,5 +16,11 @@ https://www.katacoda.com/courses/kubernetes/playground
 # official documentation on Creating and initializing prod or prod-like env.
 
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/self-hosting/
+
+# Creating Self hosted control plane
+https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-alpha/#selfhosting-1
 
 
