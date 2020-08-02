@@ -92,9 +92,10 @@ To be able to use kubectl command to connect and interact with the cluster, the 
 
 In my case, the user account is pavan
 ```
-mkdir /home/pavan/.kube
-cp /etc/kubernetes/admin.conf /home/pavan/.kube/config
-chown -R pavan:pavan /home/pavan/.kube
+whoami #to make sure the user 
+mkdir $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 ##### Deploy Calico network
 This has to be done as the user in the above step (in my case it is __pavan__)
