@@ -6,8 +6,8 @@ This documentation guides you in setting up a cluster with one master node and o
 ## Assumptions
 |Role|FQDN|IP|OS|RAM|CPU|
 |----|----|----|----|----|----|
-|KMaster|kmaster.k8s.com|192.168.245.154|CentOS 8|4G|3|
-|KWorker|kworker.k8s.com|192.168.245.156|CentOS 8|2G|2|
+|KMaster|kmaster.k8s.com|192.168.245.154|CentOS 8|4gigs|3cores|
+|KWorker|kworker.k8s.com|192.168.245.156|CentOS 8|3gigs|2cores|
 
 ## On both Kmaster and Kworker
 Perform all the commands as root user unless otherwise specified
