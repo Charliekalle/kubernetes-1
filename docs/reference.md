@@ -1,4 +1,5 @@
-# Recomended Security Policies for k8s
+# Recomended Security Policies for k8s for on-prems like VMware, Hypervisor/Bare-metal 
+    Calico
     Cilium
     Kube-router
     Romana
@@ -6,5 +7,7 @@
 https://docs.projectcalico.org/getting-started/kubernetes/quickstart
 
 https://www.kube-router.io/docs/user-guide/#try-kube-router-with-cluster-installers
+
+# Kubernetes Play Envirnoments
 
 https://labs.play-with-k8s.com/p/bsgroned7q4g00cm3650#bsgroned_bsgroped7q4g00cm365g
