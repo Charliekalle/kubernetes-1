@@ -23,4 +23,8 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/self-hosti
 # Creating Self hosted control plane
 https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-alpha/#selfhosting-1
 
+# Kubectl cheatsheet
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+
 
